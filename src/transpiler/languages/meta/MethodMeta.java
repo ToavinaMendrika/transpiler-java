@@ -1,9 +1,10 @@
 package transpiler.languages.meta;
 
-import java.util.Map;
+import java.util.*;
 
 public class MethodMeta {
+    public String methodModifier;
     public String methodName;
-    public Map<String, String> methodParams;
+    public NavigableMap<String, String> methodParams = new TreeMap<String, String>();
     public String methodReturn;
 }

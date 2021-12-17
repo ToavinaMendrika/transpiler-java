@@ -16,7 +16,7 @@ public class ClassFileLoader extends ClassLoader {
         byte[] b = loadClassFromFile(name);
        
         StringJoiner sj = new StringJoiner(".");
-        sj.add("transpiler");
+        sj.add("entity");
         sj.add(fileName);
         
         return defineClass(sj.toString(), b, 0, b.length);

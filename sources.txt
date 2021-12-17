@@ -1,2 +1,11 @@
 src/Main.java
 src/transpiler/Transpiler.java
+src/transpiler/TranspilerFactory.java
+src/transpiler/LanguageTranspilerInterface.java
+src/transpiler/helper/ClassFileLoader.java
+src/transpiler/helper/ClassFileLoader.java
+src/transpiler/languages/JavaTranspiler.java
+src/transpiler/languages/PhpTranspiler.java
+src/transpiler/languages/meta/ClassMeta.java
+src/transpiler/languages/meta/MethodMeta.java
+src/transpiler/languages/meta/PropertyMeta.java

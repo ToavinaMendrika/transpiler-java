@@ -1,11 +1,14 @@
 import transpiler.Transpiler;
 import transpiler.TranspilerFactory;
-import transpiler.languages.JavaTranspiler;
 
 public class Main {
     public static void main(String[] args) throws ClassNotFoundException {
-        JavaTranspiler lt = new JavaTranspiler();
-        Transpiler tp = TranspilerFactory.getTranspiler(lt, "src/resources/Transpiler");
-        tp.exec();
+        Transpiler tp;
+        try {
+            tp = TranspilerFactory.getTranspiler("java", "src/resources/Personne");
+            tp.exec();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
