@@ -30,6 +30,8 @@ public class PhpTranspiler implements LanguageTranspilerInterface {
         classMeta.setClassModifier(c.getModifiers());
         classMeta.setClassProperties(c.getDeclaredFields());
         classMeta.setClassMethods(c.getDeclaredMethods());
+        classMeta.setClassImplements(c.getInterfaces());
+
         System.out.println(
             setupPackage() + 
             setupClassDeclaration() +
@@ -50,7 +52,18 @@ public class PhpTranspiler implements LanguageTranspilerInterface {
 
     public String setupClassDeclaration() {
         if (classMeta.getClassType() == "class") {
-            return classMeta.getClassModifier() + " " + classMeta.getClassType() + " " + classMeta.getClassName() + " {\n";
+            StringJoiner cl = new StringJoiner("");
+            cl.add(classMeta.getClassModifier() + " " + classMeta.getClassType() + " " + classMeta.getClassName());
+            if (classMeta.getClassImplements().size() > 0 ) {
+                cl.add(" implements " + classMeta.getClassImplements().get(0));
+            } 
+            if (classMeta.getClassImplements().size() > 1 ) {
+                for (String impl : classMeta.getClassImplements()) {
+                    cl.add(", " + impl);
+                }
+            }
+            cl.add(" {\n");
+            return cl.toString();
         } else {
             return "public interface " + classMeta.getClassName() + " {\n";
         }

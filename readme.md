@@ -7,7 +7,7 @@ this project allow to transple .class file into java or php class language
 ```bash
     
     java -cp target/classes Main [language: php|java] [path to class file] [classfile namespace]
-    #exemple
+    #example
     java -cp target/classes Main php src/resources/Personne entity
 ```
 

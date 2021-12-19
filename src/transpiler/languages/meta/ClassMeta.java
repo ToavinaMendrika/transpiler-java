@@ -8,7 +8,7 @@ public class ClassMeta {
     protected String className;
     protected String classModifier;
     protected String classPackage;
-    protected String classImplement;
+    protected List<String> classImplements = new ArrayList<String>();
     protected String classInherance;
     protected List<PropertyMeta> classProperties = new ArrayList<PropertyMeta>();
     protected List<MethodMeta> classMethods =  new ArrayList<MethodMeta>();
@@ -80,7 +80,18 @@ public class ClassMeta {
         return classMethods;
     }
 
-    private String getModifiers(int mod) {
+    public String getModifiers(int mod) {
         return Modifier.toString(mod);
     }
+
+    public void setClassImplements(Class[] cl) {
+        for (Class c : cl) {
+            classImplements.add(c.getSimpleName());
+        }
+    }
+
+    public List<String> getClassImplements() {
+        return classImplements;
+    }
+
 }
