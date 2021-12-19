@@ -8,6 +8,9 @@ import transpiler.languages.meta.ClassMeta;
 import transpiler.languages.meta.MethodMeta;
 import transpiler.languages.meta.PropertyMeta;
 
+/**
+ * Php language transpiler
+ */
 public class PhpTranspiler implements LanguageTranspilerInterface {
 
     private ClassMeta classMeta;

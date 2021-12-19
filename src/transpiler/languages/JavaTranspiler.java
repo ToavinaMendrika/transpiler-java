@@ -8,6 +8,9 @@ import transpiler.languages.meta.ClassMeta;
 import transpiler.languages.meta.MethodMeta;
 import transpiler.languages.meta.PropertyMeta;
 
+/**
+ * Java language transpiler
+ */
 public class JavaTranspiler implements LanguageTranspilerInterface {
 
     private ClassMeta classMeta;

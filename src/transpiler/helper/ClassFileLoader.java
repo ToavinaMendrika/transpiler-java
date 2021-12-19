@@ -6,6 +6,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.StringJoiner;
 
+/**
+ * Load class file
+ */
 public class ClassFileLoader extends ClassLoader {
 
     private String fileName;
