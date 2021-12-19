@@ -7,7 +7,13 @@ public class TranspilerFactory {
 
     static LanguageTranspilerInterface languageTranspiler;
 
-    public static Transpiler getTranspiler(String lt, String filename) throws Exception {
+    /**
+     * Transpiler class factory
+     * @param String lt Language translator
+     * @param String filename sources
+     * @param String pack class package
+     */
+    public static Transpiler getTranspiler(String lt, String filename, String pack) throws Exception {
         switch (lt) {
             case "php":
                 languageTranspiler = new PhpTranspiler();
@@ -18,6 +24,6 @@ public class TranspilerFactory {
             default:
                 throw new Exception("LanguageTranspiler not found");
         }
-        return new Transpiler(languageTranspiler, filename);
+        return new Transpiler(languageTranspiler, filename, pack);
     }
 }

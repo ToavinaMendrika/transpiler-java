@@ -4,19 +4,17 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.StringJoiner;
 
 public class ClassFileLoader extends ClassLoader {
 
     private String fileName;
     
-    @Override
-    public Class findClass(String name) throws ClassNotFoundException {
+    public Class findClass(String name, String pack) throws ClassNotFoundException {
         byte[] b = loadClassFromFile(name);
        
         StringJoiner sj = new StringJoiner(".");
-        sj.add("entity");
+        sj.add(pack);
         sj.add(fileName);
         
         return defineClass(sj.toString(), b, 0, b.length);
